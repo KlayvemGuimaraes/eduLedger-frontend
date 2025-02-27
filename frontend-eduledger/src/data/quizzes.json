@@ -1,0 +1,139 @@
+{
+  "quizzes": {
+    "blockchain": [
+      {
+        "question": "O que é blockchain?",
+        "options": ["Uma criptomoeda", "Uma tecnologia de registro distribuído", "Um banco de dados centralizado", "Um tipo de malware"],
+        "answer": "Uma tecnologia de registro distribuído"
+      },
+      {
+        "question": "Quem criou o Bitcoin?",
+        "options": ["Vitalik Buterin", "Satoshi Nakamoto", "Charlie Lee", "Elon Musk"],
+        "answer": "Satoshi Nakamoto"
+      },
+      {
+        "question": "Qual é a principal função de um smart contract?",
+        "options": ["Armazenar dados", "Executar transações automaticamente", "Mineração de criptomoedas", "Proteger a rede"],
+        "answer": "Executar transações automaticamente"
+      },
+      {
+        "question": "Qual é a criptomoeda nativa da rede Ethereum?",
+        "options": ["Bitcoin", "Ripple", "Litecoin", "Ether"],
+        "answer": "Ether"
+      },
+      {
+        "question": "O que é uma ICO?",
+        "options": ["Initial Coin Offering", "Initial Currency Offering", "Initial Crypto Offering", "Initial Chain Offering"],
+        "answer": "Initial Coin Offering"
+      }
+    ],
+    "security": [
+      {
+        "question": "Qual é a melhor prática para proteger suas criptomoedas?",
+        "options": ["Deixar em uma exchange", "Usar uma carteira de hardware", "Compartilhar sua chave privada", "Usar uma senha fraca"],
+        "answer": "Usar uma carteira de hardware"
+      },
+      {
+        "question": "O que é uma chave privada?",
+        "options": ["Uma senha para acessar sua conta", "Um código secreto que permite gastar suas criptomoedas", "Um endereço público", "Um tipo de criptomoeda"],
+        "answer": "Um código secreto que permite gastar suas criptomoedas"
+      },
+      {
+        "question": "O que é autenticação de dois fatores (2FA)?",
+        "options": ["Um método de autenticação que requer duas formas de verificação", "Uma senha forte", "Um tipo de criptomoeda", "Um software de mineração"],
+        "answer": "Um método de autenticação que requer duas formas de verificação"
+      },
+      {
+        "question": "Qual é a melhor maneira de armazenar suas chaves privadas?",
+        "options": ["Em um documento de texto no seu computador", "Em uma carteira de hardware", "Em um e-mail", "Em uma exchange"],
+        "answer": "Em uma carteira de hardware"
+      },
+      {
+        "question": "O que é phishing?",
+        "options": ["Um ataque que tenta enganar as pessoas para que revelem informações pessoais", "Um tipo de criptomoeda", "Um software de mineração", "Uma técnica de blockchain"],
+        "answer": "Um ataque que tenta enganar as pessoas para que revelem informações pessoais"
+      }
+    ],
+    "cryptocurrencies": [
+      {
+        "question": "Qual é a criptomoeda nativa da rede Ethereum?",
+        "options": ["Bitcoin", "Ripple", "Litecoin", "Ether"],
+        "answer": "Ether"
+      },
+      {
+        "question": "Qual é a criptomoeda mais conhecida?",
+        "options": ["Bitcoin", "Ripple", "Litecoin", "Ether"],
+        "answer": "Bitcoin"
+      },
+      {
+        "question": "Qual é a principal função do Bitcoin?",
+        "options": ["Ser uma reserva de valor", "Ser uma plataforma de contratos inteligentes", "Ser uma moeda estável", "Ser um software de mineração"],
+        "answer": "Ser uma reserva de valor"
+      },
+      {
+        "question": "O que é uma altcoin?",
+        "options": ["Qualquer criptomoeda que não seja o Bitcoin", "Uma moeda estável", "Um software de mineração", "Um tipo de contrato inteligente"],
+        "answer": "Qualquer criptomoeda que não seja o Bitcoin"
+      },
+      {
+        "question": "O que é uma stablecoin?",
+        "options": ["Uma criptomoeda com valor estável", "Uma criptomoeda volátil", "Uma criptomoeda usada para mineração", "Uma criptomoeda usada para contratos inteligentes"],
+        "answer": "Uma criptomoeda com valor estável"
+      }
+    ],
+    "smart-contracts": [
+      {
+        "question": "Qual é a principal função de um smart contract?",
+        "options": ["Armazenar dados", "Executar transações automaticamente", "Mineração de criptomoedas", "Proteger a rede"],
+        "answer": "Executar transações automaticamente"
+      },
+      {
+        "question": "Quem criou o conceito de smart contracts?",
+        "options": ["Nick Szabo", "Satoshi Nakamoto", "Vitalik Buterin", "Charlie Lee"],
+        "answer": "Nick Szabo"
+      },
+      {
+        "question": "Em qual plataforma os smart contracts são mais populares?",
+        "options": ["Ethereum", "Bitcoin", "Ripple", "Litecoin"],
+        "answer": "Ethereum"
+      },
+      {
+        "question": "O que é Solidity?",
+        "options": ["Uma linguagem de programação para smart contracts", "Uma criptomoeda", "Um software de mineração", "Um tipo de contrato inteligente"],
+        "answer": "Uma linguagem de programação para smart contracts"
+      },
+      {
+        "question": "O que é um token ERC-721?",
+        "options": ["Um padrão de token não fungível na rede Ethereum", "Um tipo de criptomoeda", "Um software de mineração", "Um contrato inteligente"],
+        "answer": "Um padrão de token não fungível na rede Ethereum"
+      }
+    ],
+    "mining": [
+      {
+        "question": "Qual é a função dos mineradores na rede Bitcoin?",
+        "options": ["Criar novos blocos e validar transações", "Armazenar dados", "Proteger a rede contra ataques", "Desenvolver novos aplicativos"],
+        "answer": "Criar novos blocos e validar transações"
+      },
+      {
+        "question": "O que é mineração de criptomoedas?",
+        "options": ["O processo de validar transações e adicionar novos blocos à blockchain", "O processo de criar novos contratos inteligentes", "O processo de armazenar criptomoedas", "O processo de negociar criptomoedas"],
+        "answer": "O processo de validar transações e adicionar novos blocos à blockchain"
+      },
+      {
+        "question": "O que é um pool de mineração?",
+        "options": ["Um grupo de mineradores que trabalham juntos para validar transações", "Um software de mineração", "Um tipo de criptomoeda", "Um contrato inteligente"],
+        "answer": "Um grupo de mineradores que trabalham juntos para validar transações"
+      },
+      {
+        "question": "O que é Proof of Work (PoW)?",
+        "options": ["Um algoritmo de consenso que requer trabalho computacional", "Um tipo de criptomoeda", "Um software de mineração", "Um contrato inteligente"],
+        "answer": "Um algoritmo de consenso que requer trabalho computacional"
+      },
+      {
+        "question": "O que é Proof of Stake (PoS)?",
+        "options": ["Um algoritmo de consenso que seleciona validadores com base na quantidade de criptomoedas que possuem", "Um tipo de criptomoeda", "Um software de mineração", "Um contrato inteligente"],
+        "answer": "Um algoritmo de consenso que seleciona validadores com base na quantidade de criptomoedas que possuem"
+      }
+    ]
+  }
+}
