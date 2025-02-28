@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import brazilFlag from '../assets/brazil-flag.png'; // Adicione a imagem da bandeira do Brasil na pasta assets
-import usaFlag from '../assets/usa-flag.png'; // Adicione a imagem da bandeira dos EUA na pasta assets
+import brazilFlag from '../assets/brazil-flag.png';
+import usaFlag from '../assets/usa-flag.jpg';
 
 const Container = styled.div`
   display: flex;
@@ -11,6 +11,7 @@ const Container = styled.div`
   background-color: #000;
   color: #fff;
   text-align: center;
+  padding: 2rem;
 `;
 
 const Header = styled.header`
@@ -125,12 +126,16 @@ const ComparisonTitle = styled.h2`
 const ComparisonContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 4rem;
 `;
 
 const CountryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  width: 300px;
 `;
 
 const Flag = styled.img`
@@ -140,7 +145,7 @@ const Flag = styled.img`
 `;
 
 const BarContainer = styled.div`
-  width: 200px;
+  width: 100%;
   height: 20px;
   background-color: #444;
   border-radius: 10px;
@@ -154,12 +159,40 @@ const Bar = styled.div<{ percentage: number }>`
   background-color: #0070f3;
 `;
 
+const Description = styled.p`
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 1rem;
+`;
+
 const Footer = styled.footer`
   width: 100%;
   padding: 2rem 0;
   background-color: #000;
   color: #fff;
   text-align: center;
+`;
+
+const FooterLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+`;
+
+const FooterLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+
+  &:hover {
+    color: #0070f3;
+  }
+`;
+
+const FooterText = styled.p`
+  font-size: 0.875rem;
+  color: #666;
 `;
 
 const LandingPage: React.FC = () => {
@@ -200,29 +233,41 @@ const LandingPage: React.FC = () => {
         </CardsContainer>
       </InfoSection>
       <ComparisonSection>
-        <ComparisonTitle>Investimento em Educação</ComparisonTitle>
+        <ComparisonTitle>Investimento em Criptomoedas</ComparisonTitle>
         <ComparisonContainer>
           <CountryContainer>
             <Flag src={brazilFlag} alt="Bandeira do Brasil" />
             <BarContainer>
-              <Bar percentage={5} />
+              <Bar percentage={7} />
             </BarContainer>
-            <p>Brasil: 5%</p>
+            <p>Brasil: 7%</p>
+            <Description>
+              No Brasil, 7% da população investe em criptomoedas. A alta inflação e a desconfiança no sistema financeiro tradicional impulsionam o interesse por alternativas como o Bitcoin.
+            </Description>
           </CountryContainer>
           <CountryContainer>
             <Flag src={usaFlag} alt="Bandeira dos EUA" />
             <BarContainer>
-              <Bar percentage={15} />
+              <Bar percentage={14} />
             </BarContainer>
-            <p>EUA: 15%</p>
+            <p>EUA: 14%</p>
+            <Description>
+              Nos EUA, 14% da população investe em criptomoedas. A maior familiaridade com tecnologias financeiras e o acesso a plataformas de investimento contribuem para esse número.
+            </Description>
           </CountryContainer>
         </ComparisonContainer>
       </ComparisonSection>
       <Footer>
-        <p>&copy; 2025 EduLedger. Todos os direitos reservados.</p>
+        <FooterLinks>
+          <FooterLink to="/">Home</FooterLink>
+          <FooterLink to="/quiz-selection">Quiz</FooterLink>
+          <FooterLink to="/faq">FAQ</FooterLink>
+          <FooterLink to="/login">Conectar Carteira</FooterLink>
+        </FooterLinks>
+        <FooterText>&copy; 2025 EduLedger. Todos os direitos reservados.</FooterText>
       </Footer>
     </Container>
   );
 };
 
-export default LandingPage; 
+export default LandingPage;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './components/Login.tsx';
 import Quiz from './components/Quiz.tsx';
 import QuizSelection from './components/QuizSelection.tsx';
 import FAQ from './components/FAQ.tsx';
@@ -15,7 +14,6 @@ const App: React.FC = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/quiz-selection" element={<QuizSelection />} />
         <Route path="/quiz/:quizId" element={<Quiz />} />
         <Route path="/faq" element={<FAQ />} />

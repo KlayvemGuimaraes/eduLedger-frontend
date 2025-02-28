@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { Web3Provider } from '@ethersproject/providers';
 
 const Nav = styled.nav`
   background-color: #000;
@@ -25,7 +26,7 @@ const Logo = styled(Link)`
 const NavLinks = styled.div`
   display: flex;
   gap: 1.5rem;
-  align-items:center; 
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`
@@ -39,7 +40,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const ConnectButton = styled(Link)`
+const ConnectButton = styled.button`
   padding: 0.5rem 1rem;
   background-color: #0070f3;
   color: white;
@@ -48,6 +49,7 @@ const ConnectButton = styled(Link)`
   font-size: 1rem;
   text-decoration: none;
   transition: background-color 0.3s;
+  cursor: pointer;
 
   &:hover {
     background-color: #005bb5;
@@ -55,14 +57,48 @@ const ConnectButton = styled(Link)`
 `;
 
 const Navbar: React.FC = () => {
+  const [account, setAccount] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const connectWallet = async () => {
+    if (window.ethereum) {
+      try {
+        const provider = new Web3Provider(window.ethereum);
+        await provider.send('eth_requestAccounts', []);
+        const signer = provider.getSigner();
+        const address = await signer.getAddress();
+        setAccount(address);
+
+        // Configurar a rede Arbitrum
+        const chainId = '0xA4B1'; // Chain ID da Arbitrum One
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId }],
+        });
+
+        // Redirecionar para a rota /home-main
+        navigate('/home-main');
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      alert('MetaMask não está instalada. Por favor, instale-a para continuar.');
+    }
+  };
+
   return (
     <Nav>
       <Logo to="/">EduLedger</Logo>
       <NavLinks>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/quiz-selection">Quiz</StyledLink>
-        <StyledLink to="/faq">FAQ</StyledLink>
-        <ConnectButton to="/login">Conectar Carteira</ConnectButton>
+        {account && (
+          <>
+            <StyledLink to="/quiz-selection">Quiz</StyledLink>
+            <StyledLink to="/faq">FAQ</StyledLink>
+          </>
+        )}
+        <ConnectButton onClick={connectWallet}>
+          {account ? `Conectado: ${account}` : 'Conectar Carteira'}
+        </ConnectButton>
       </NavLinks>
     </Nav>
   );
