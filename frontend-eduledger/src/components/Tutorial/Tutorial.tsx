@@ -53,8 +53,19 @@ const BulkText = styled.div`
   margin-bottom: 2rem;
 `;
 
+const Input = styled.input`
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+`;
+
 const Tutorial: React.FC = () => {
   const [step, setStep] = useState(1);
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
 
   // Obtém o conteúdo correspondente ao step atual
   const conteudoAtual = textos.find((texto) => texto.id === step);
@@ -72,6 +83,22 @@ const Tutorial: React.FC = () => {
             <Paragraph>Conteúdo não disponível.</Paragraph>
           )}
         </BulkText>
+        {step === 5 && (
+          <>
+            <Input
+              type="text"
+              value={input1}
+              onChange={(e) => setInput1(e.target.value)}
+              placeholder="Digite algo..."
+            />
+            <Input
+              type="text"
+              value={input2}
+              onChange={(e) => setInput2(e.target.value)}
+              placeholder="Digite algo..."
+            />
+          </>
+        )}
         <Button
           onClick={() => {
             if (step < textos.length) setStep(step + 1);
