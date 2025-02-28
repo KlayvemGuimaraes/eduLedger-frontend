@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { textos } from '../../data/tutorial.ts';
 
@@ -36,7 +37,7 @@ const Paragraph = styled.p`
 
 const Button = styled.button`
   padding: 1rem 2rem;
-  background-color: #0070f3;
+  background-color: #561410;
   color: white;
   border: none;
   border-radius: 5px;
@@ -45,11 +46,23 @@ const Button = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #005bb5;
+    background-color: #4b2928;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
   }
 `;
 
 const BulkText = styled.div`
+  margin-bottom: 2rem;
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 2rem;
 `;
 
@@ -66,9 +79,19 @@ const Tutorial: React.FC = () => {
   const [step, setStep] = useState(1);
   const [input1, setInput1] = useState('');
   const [input2, setInput2] = useState('');
+  const navigate = useNavigate();
 
   // Obtém o conteúdo correspondente ao step atual
   const conteudoAtual = textos.find((texto) => texto.id === step);
+
+  const handleNextStep = () => {
+    if (step < textos.length) {
+      setStep(step + 1);
+    } else {
+      // Redirecionar para a rota /quiz-selection
+      navigate('/quiz-selection');
+    }
+  };
 
   return (
     <Container>
@@ -83,28 +106,24 @@ const Tutorial: React.FC = () => {
             <Paragraph>Conteúdo não disponível.</Paragraph>
           )}
         </BulkText>
-        {step === 5 && (
-          <>
+        {step === textos.length && (
+          <InputContainer>
             <Input
               type="text"
               value={input1}
               onChange={(e) => setInput1(e.target.value)}
-              placeholder="Digite algo..."
+              placeholder="Digite o endereço da carteira..."
             />
             <Input
               type="text"
               value={input2}
               onChange={(e) => setInput2(e.target.value)}
-              placeholder="Digite algo..."
+              placeholder="Digite o total de tokens..."
             />
-          </>
+          </InputContainer>
         )}
-        <Button
-          onClick={() => {
-            if (step < textos.length) setStep(step + 1);
-          }}
-        >
-          Próximo
+        <Button onClick={handleNextStep}>
+          {step === textos.length ? 'Fim' : 'Próximo'}
         </Button>
       </Content>
     </Container>

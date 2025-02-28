@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Web3Provider } from '@ethersproject/providers';
 import brazilFlag from '../assets/brazil-flag.png';
 import usaFlag from '../assets/usa-flag.jpg';
+import backgroundImage from '../assets/eduLedger-background.jpg';
 
 const Container = styled.div`
   display: flex;
@@ -41,14 +42,18 @@ const ConnectButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #561410;
+    background-color: #4b2928;
   }
 `;
 
 const MainSection = styled.section`
   width: 100%;
-  padding: 4rem 0;
-  background-color: #000;
+  padding: 14rem 0;
+  background-image: url(${backgroundImage});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
 `;
 
 const Title = styled.h1`
@@ -214,11 +219,6 @@ const LandingPage: React.FC = () => {
   return (
     <Container>
       <MainSection>
-        <Title>EduLedger</Title>
-        <Subtitle>Aprenda sobre tecnologias blockchain de forma fácil e acessível</Subtitle>
-        <ConnectButton onClick={connectWallet}>
-          {account ? `Conectado: ${account}` : 'Conectar Carteira'}
-        </ConnectButton>
       </MainSection>
       <InfoSection>
         <InfoTitle>O que é Blockchain?</InfoTitle>
