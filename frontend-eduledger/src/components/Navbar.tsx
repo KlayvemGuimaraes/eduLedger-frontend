@@ -94,6 +94,7 @@ const Navbar: React.FC = () => {
           <>
             <StyledLink to="/quiz-selection">Quiz</StyledLink>
             <StyledLink to="/faq">FAQ</StyledLink>
+            <StyledLink to="/flashcards">FlashCards</StyledLink>
           </>
         )}
         <ConnectButton onClick={connectWallet}>

@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const FlashcardContainer = styled.div`
-  width: 250px;
-  height: 200px;
+  width: 220px;
+  height: 160px;
   perspective: 1000px;
   cursor: pointer;
+  margin: 20px;
 `;
 
 const FlashcardInner = styled.div<{ isFlipped: boolean }>`
@@ -62,7 +63,7 @@ const FlashcardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 40px;
+  gap: 30px;
   padding: 20px;
 `;
 
