@@ -26,7 +26,8 @@ const Card = styled.div`
 const Question = styled.h1`
   font-size: 2rem;
   color: #333;
-  margin-bottom: 1.5rem;
+  margin-top: 0px;
+  margin-bottom: 2.5rem;
 `;
 
 const OptionButton = styled.button<{ isCorrect?: boolean; isWrong?: boolean }>`
@@ -34,7 +35,7 @@ const OptionButton = styled.button<{ isCorrect?: boolean; isWrong?: boolean }>`
   width: 100%;
   margin: 0.5rem 0;
   padding: 1rem;
-  background-color: ${(props) => (props.isCorrect ? '#28a745' : props.isWrong ? '#dc3545' : '#0070f3')};
+  background-color: ${(props) => (props.isCorrect ? '#28a745' : props.isWrong ? '#dc3545' : '#561410')};
   color: white;
   border: none;
   border-radius: 5px;
@@ -43,7 +44,7 @@ const OptionButton = styled.button<{ isCorrect?: boolean; isWrong?: boolean }>`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: ${(props) => (props.isCorrect ? '#218838' : props.isWrong ? '#c82333' : '#005bb5')};
+    background-color: ${(props) => (props.isCorrect ? '#218838' : props.isWrong ? '#c82333' : '#561410')};
   }
 `;
 
@@ -55,7 +56,7 @@ const Score = styled.h1`
 
 const RestartButton = styled.button`
   padding: 1rem;
-  background-color: #0070f3;
+  background-color: #561410;
   color: white;
   border: none;
   border-radius: 5px;
@@ -64,7 +65,7 @@ const RestartButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #005bb5;
+    background-color: #1c0c0b;
   }
 `;
 
