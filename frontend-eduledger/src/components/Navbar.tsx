@@ -25,6 +25,7 @@ const Logo = styled(Link)`
 const NavLinks = styled.div`
   display: flex;
   gap: 1.5rem;
+  align-items:center; 
 `;
 
 const StyledLink = styled(Link)`
@@ -38,14 +39,30 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const ConnectButton = styled(Link)`
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #005bb5;
+  }
+`;
+
 const Navbar: React.FC = () => {
   return (
     <Nav>
       <Logo to="/">EduLedger</Logo>
       <NavLinks>
-        <StyledLink to="/">Login</StyledLink>
+        <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/quiz-selection">Quiz</StyledLink>
         <StyledLink to="/faq">FAQ</StyledLink>
+        <ConnectButton to="/login">Conectar Carteira</ConnectButton>
       </NavLinks>
     </Nav>
   );
