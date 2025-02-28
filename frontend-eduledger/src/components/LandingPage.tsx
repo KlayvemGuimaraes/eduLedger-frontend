@@ -261,6 +261,7 @@ const LandingPage: React.FC = () => {
         <FooterLinks>
           <FooterLink to="/">Home</FooterLink>
           <FooterLink to="/quiz-selection">Quiz</FooterLink>
+          <FooterLink to="/flashcards">Flash Cards</FooterLink>
           <FooterLink to="/faq">FAQ</FooterLink>
           <FooterLink to="/login">Conectar Carteira</FooterLink>
         </FooterLinks>
