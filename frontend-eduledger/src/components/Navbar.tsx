@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
         });
 
         // Redirecionar para a rota /home-main
-        navigate('/quiz-selection');
+        navigate('/tutorial');
       } catch (error) {
         console.error(error);
       }
@@ -94,6 +94,7 @@ const Navbar: React.FC = () => {
           <>
             <StyledLink to="/quiz-selection">Quiz</StyledLink>
             <StyledLink to="/flashcards">FlashCards</StyledLink>
+            <StyledLink to="/tutorial">Tutorial</StyledLink>
             <StyledLink to="/faq">FAQ</StyledLink>
           </>
         )}
