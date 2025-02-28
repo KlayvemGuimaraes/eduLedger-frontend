@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# EduLedger
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+EduLedger é uma plataforma inovadora de educação que utiliza minigames educativos para ensinar conceitos de blockchain de forma interativa e gamificada. O projeto foi desenvolvido durante o **Hackathon Carnival Modular**, realizado nos dias **26, 27 e 28**, e foca na implementação de soluções modulares com tecnologias de **Arbitrum**.
 
-## Available Scripts
+## Tecnologias Utilizadas
+- **Arbitrum**: Utilizado para a implementação segura e eficiente do sistema de login dos usuários.
+- **Next.js**: Para a criação da interface dinâmica e responsiva.
+- **Solidity**: Para contratos inteligentes que garantem a segurança e transparência da plataforma.
+- **IPFS**: Para armazenamento descentralizado de conteúdo educacional.
+- **Metamask**: Para autenticação e interação com os contratos inteligentes.
 
-In the project directory, you can run:
+## Objetivo do EduLedger
+O EduLedger tem como principal missão democratizar o acesso à educação blockchain por meio de minigames interativos. Os usuários aprendem sobre contratos inteligentes, carteiras digitais, NFTs e outras tecnologias descentralizadas de maneira didática e engajante.
 
-### `npm start`
+## Implementação com Arbitrum
+A escolha da **Arbitrum** se deu devido à sua eficiência e escalabilidade, permitindo transações rápidas e com baixo custo. No EduLedger, utilizamos a Arbitrum para a implementação do sistema de **login descentralizado**, garantindo segurança e autenticidade na identificação dos usuários dentro da plataforma.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Como Funciona
+1. O usuário acessa a plataforma e se autentica via **wallet** conectada à Arbitrum.
+2. Escolhe um minigame educativo para jogar.
+3. Ganha pontos e conquistas conforme avança no aprendizado.
+4. Registra suas conquistas na blockchain para compor um **histórico imutável** de aprendizado.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contribuição
+Se você deseja contribuir com o projeto, sinta-se à vontade para abrir um pull request ou sugerir melhorias. Estamos abertos a colaborações para expandir os minigames e integrar novas funcionalidades.
 
-### `npm test`
+## Equipe
+O projeto foi desenvolvido por um time apaixonado por blockchain e educação durante o **Hackathon Carnival Modular**. Nossa visão é transformar a aprendizagem sobre tecnologia descentralizada em algo acessível e divertido para todos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+EduLedger - Transformando aprendizado em experiência!
