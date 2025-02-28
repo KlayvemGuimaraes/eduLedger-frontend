@@ -62,7 +62,7 @@ const Subtitle = styled.h2`
 
 const Button = styled(Link)`
   padding: 1rem 2rem;
-  background-color: #0070f3;
+  background-color: #561410;
   color: white;
   border: none;
   border-radius: 5px;
@@ -156,7 +156,7 @@ const BarContainer = styled.div`
 const Bar = styled.div<{ percentage: number }>`
   width: ${(props) => props.percentage}%;
   height: 100%;
-  background-color: #0070f3;
+  background-color: #561410;
 `;
 
 const Description = styled.p`

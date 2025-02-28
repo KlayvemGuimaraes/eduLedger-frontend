@@ -7,8 +7,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f0f0f0;
   padding: 2rem;
 `;
 
@@ -18,7 +16,7 @@ const Card = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 800px;
+  max-width: 300px;
   text-align: center;
 `;
 
@@ -39,7 +37,7 @@ const QuizLink = styled(Link)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #0070f3;
+  background-color: #561410;
   color: white;
   border: none;
   border-radius: 10px;
@@ -49,7 +47,7 @@ const QuizLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    background-color: #005bb5;
+    background-color: #1c0c0b;
   }
 `;
 
@@ -72,23 +70,18 @@ const QuizSelection: React.FC = () => {
       <Card>
         <OptionsGrid>
           <QuizLink to="/quiz/blockchain">
-            <QuizImage src="../assets/photos/crypto.png" alt="Redes Blockchain" />
             <QuizText>Redes Blockchain</QuizText>
           </QuizLink>
           <QuizLink to="/quiz/security">
-            <QuizImage src="/path/to/security.jpg" alt="Como se Proteger na Tech Blockchain" />
             <QuizText>Como se Proteger na Tech Blockchain</QuizText>
           </QuizLink>
           <QuizLink to="/quiz/cryptocurrencies">
-            <QuizImage src="/path/to/cryptocurrencies.jpg" alt="Criptomoedas" />
             <QuizText>Criptomoedas</QuizText>
           </QuizLink>
           <QuizLink to="/quiz/smart-contracts">
-            <QuizImage src="/path/to/smart-contracts.jpg" alt="Smart Contracts" />
             <QuizText>Smart Contracts</QuizText>
           </QuizLink>
           <QuizLink to="/quiz/mining">
-            <QuizImage src="/path/to/mining.jpg" alt="Mineração de Criptomoedas" />
             <QuizText>Mineração de Criptomoedas</QuizText>
           </QuizLink>
         </OptionsGrid>

@@ -19,7 +19,7 @@ const Logo = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    color: #0070f3;
+    color: #fff;
   }
 `;
 
@@ -36,13 +36,13 @@ const StyledLink = styled(Link)`
   transition: color 0.3s;
 
   &:hover {
-    color: #0070f3;
+    color: #561410;
   }
 `;
 
 const ConnectButton = styled.button`
   padding: 0.5rem 1rem;
-  background-color: #0070f3;
+  background-color: #561410;
   color: white;
   border: none;
   border-radius: 5px;
@@ -52,7 +52,7 @@ const ConnectButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #005bb5;
+    background-color: #561410;
   }
 `;
 
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
         });
 
         // Redirecionar para a rota /home-main
-        navigate('/home-main');
+        navigate('/quiz-selection');
       } catch (error) {
         console.error(error);
       }

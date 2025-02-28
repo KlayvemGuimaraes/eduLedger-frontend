@@ -7,10 +7,6 @@ const FAQ: React.FC = () => {
       answer: "A eduLedger é uma plataforma educacional que oferece quizzes, materiais sobre notícias do mercado e muito mais."
     },
     {
-      question: "Como posso me inscrever?",
-      answer: "Você pode se inscrever clicando no botão de login e seguindo as instruções."
-    },
-    {
       question: "Os quizzes são gratuitos?",
       answer: "Sim, todos os quizzes disponíveis na plataforma são gratuitos."
     },
