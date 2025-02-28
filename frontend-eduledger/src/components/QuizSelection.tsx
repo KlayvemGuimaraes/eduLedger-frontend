@@ -18,9 +18,8 @@ const Card = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   text-align: center;
-  margin-bottom: 1rem;
 `;
 
 const Title = styled.h1`
@@ -29,21 +28,41 @@ const Title = styled.h1`
   margin-bottom: 1.5rem;
 `;
 
+const OptionsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+`;
+
 const QuizLink = styled(Link)`
-  display: block;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #0070f3;
   color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 1.25rem;
+  border-radius: 10px;
+  padding: 1rem;
   text-decoration: none;
-  margin: 0.5rem 0;
   transition: background-color 0.3s;
+  cursor: pointer;
 
   &:hover {
     background-color: #005bb5;
   }
+`;
+
+const QuizImage = styled.img`
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+`;
+
+const QuizText = styled.p`
+  font-size: 1rem;
+  margin: 0;
 `;
 
 const QuizSelection: React.FC = () => {
@@ -51,11 +70,28 @@ const QuizSelection: React.FC = () => {
     <Container>
       <Title>Escolha um Quiz</Title>
       <Card>
-        <QuizLink to="/quiz/blockchain">Redes Blockchain</QuizLink>
-        <QuizLink to="/quiz/security">Como se Proteger na Tech Blockchain</QuizLink>
-        <QuizLink to="/quiz/cryptocurrencies">Criptomoedas</QuizLink>
-        <QuizLink to="/quiz/smart-contracts">Smart Contracts</QuizLink>
-        <QuizLink to="/quiz/mining">Mineração de Criptomoedas</QuizLink>
+        <OptionsGrid>
+          <QuizLink to="/quiz/blockchain">
+            <QuizImage src="../assets/photos/crypto.png" alt="Redes Blockchain" />
+            <QuizText>Redes Blockchain</QuizText>
+          </QuizLink>
+          <QuizLink to="/quiz/security">
+            <QuizImage src="/path/to/security.jpg" alt="Como se Proteger na Tech Blockchain" />
+            <QuizText>Como se Proteger na Tech Blockchain</QuizText>
+          </QuizLink>
+          <QuizLink to="/quiz/cryptocurrencies">
+            <QuizImage src="/path/to/cryptocurrencies.jpg" alt="Criptomoedas" />
+            <QuizText>Criptomoedas</QuizText>
+          </QuizLink>
+          <QuizLink to="/quiz/smart-contracts">
+            <QuizImage src="/path/to/smart-contracts.jpg" alt="Smart Contracts" />
+            <QuizText>Smart Contracts</QuizText>
+          </QuizLink>
+          <QuizLink to="/quiz/mining">
+            <QuizImage src="/path/to/mining.jpg" alt="Mineração de Criptomoedas" />
+            <QuizText>Mineração de Criptomoedas</QuizText>
+          </QuizLink>
+        </OptionsGrid>
       </Card>
     </Container>
   );
