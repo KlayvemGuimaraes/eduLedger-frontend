@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const FlashcardContainer = styled.div`
   width: 220px;
-  height: 160px;
+  height: 140px;
   perspective: 1000px;
   cursor: pointer;
   margin: 20px;
@@ -27,19 +27,23 @@ const FlashcardFace = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 10px;
   text-align: center;
 `;
 
 const FlashcardFront = styled(FlashcardFace)`
-  background-color: #fff;
+  background-color: #561410;
+  color: #fff;
+  font-weight: bold;
 `;
 
 const FlashcardBack = styled(FlashcardFace)`
   background-color: #f8f8f8;
   transform: rotateY(180deg);
+  color: #561410;
+  font-weight: bold;
 `;
 
 const Flashcard: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
@@ -67,6 +71,17 @@ const FlashcardGrid = styled.div`
   padding: 20px;
 `;
 
+const FlashcardPageContainer = styled.div`
+  padding: 20px;
+  text-align: center;
+`;
+
+const Title = styled.h1`
+  color: #561410;
+  font-weight: bold;
+  text-decoration: none;
+`;
+
 const FlashcardPage: React.FC = () => {
   const flashcards = [
     { question: 'O que é criptomoeda?', answer: 'Uma moeda digital que utiliza criptografia para segurança.' },
@@ -81,15 +96,17 @@ const FlashcardPage: React.FC = () => {
     { question: 'O que é Proof of Work (PoW)?', answer: 'É um mecanismo de consenso onde computadores resolvem problemas matemáticos para validar transações no blockchain.' },
     { question: 'O que é Proof of Stake (PoS)?', answer: 'É um mecanismo de consenso onde validadores são escolhidos com base na quantidade de criptomoedas que possuem.' },
     { question: 'O que é um fork em blockchain?', answer: 'É uma divisão na rede blockchain, podendo ser soft fork (compatível) ou hard fork (incompatível).' },
-    // Adicione mais flashcards conforme necessário
   ];
 
   return (
-    <FlashcardGrid>
-      {flashcards.map((flashcard, index) => (
-        <Flashcard key={index} question={flashcard.question} answer={flashcard.answer} />
-      ))}
-    </FlashcardGrid>
+    <FlashcardPageContainer>
+      <Title>Saiba Agora</Title>
+      <FlashcardGrid>
+        {flashcards.map((flashcard, index) => (
+          <Flashcard key={index} question={flashcard.question} answer={flashcard.answer} />
+        ))}
+      </FlashcardGrid>
+    </FlashcardPageContainer>
   );
 };
 
