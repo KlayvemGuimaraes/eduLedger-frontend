@@ -93,8 +93,8 @@ const Navbar: React.FC = () => {
         {account && (
           <>
             <StyledLink to="/quiz-selection">Quiz</StyledLink>
-            <StyledLink to="/faq">FAQ</StyledLink>
             <StyledLink to="/flashcards">FlashCards</StyledLink>
+            <StyledLink to="/faq">FAQ</StyledLink>
           </>
         )}
         <ConnectButton onClick={connectWallet}>

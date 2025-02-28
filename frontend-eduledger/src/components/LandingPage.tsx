@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Web3Provider } from '@ethersproject/providers';
 import brazilFlag from '../assets/brazil-flag.png';
 import usaFlag from '../assets/usa-flag.jpg';
 
@@ -11,7 +12,6 @@ const Container = styled.div`
   background-color: #000;
   color: #fff;
   text-align: center;
-  padding: 2rem;
 `;
 
 const Header = styled.header`
@@ -29,18 +29,19 @@ const Logo = styled.h1`
   margin: 0;
 `;
 
-const ConnectButton = styled(Link)`
+const ConnectButton = styled.button`
   padding: 0.5rem 1rem;
-  background-color: #0070f3;
+  background-color: #561410;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   text-decoration: none;
   transition: background-color 0.3s;
+  cursor: pointer;
 
   &:hover {
-    background-color: #005bb5;
+    background-color: #561410;
   }
 `;
 
@@ -58,21 +59,6 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 2rem;
-`;
-
-const Button = styled(Link)`
-  padding: 1rem 2rem;
-  background-color: #561410;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.25rem;
-  text-decoration: none;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #005bb5;
-  }
 `;
 
 const InfoSection = styled.section`
@@ -186,7 +172,7 @@ const FooterLink = styled(Link)`
   font-size: 1rem;
 
   &:hover {
-    color: #0070f3;
+    color: #561410;
   }
 `;
 
@@ -196,12 +182,43 @@ const FooterText = styled.p`
 `;
 
 const LandingPage: React.FC = () => {
+  const [account, setAccount] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const connectWallet = async () => {
+    if (window.ethereum) {
+      try {
+        const provider = new Web3Provider(window.ethereum);
+        await provider.send('eth_requestAccounts', []);
+        const signer = provider.getSigner();
+        const address = await signer.getAddress();
+        setAccount(address);
+
+        // Configurar a rede Arbitrum
+        const chainId = '0xA4B1'; // Chain ID da Arbitrum One
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId }],
+        });
+
+        // Redirecionar para a rota /home-main
+        navigate('/quiz-selection');
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      alert('MetaMask não está instalada. Por favor, instale-a para continuar.');
+    }
+  };
+
   return (
     <Container>
       <MainSection>
         <Title>EduLedger</Title>
         <Subtitle>Aprenda sobre tecnologias blockchain de forma fácil e acessível</Subtitle>
-        <Button to="/login">Conectar Carteira</Button>
+        <ConnectButton onClick={connectWallet}>
+          {account ? `Conectado: ${account}` : 'Conectar Carteira'}
+        </ConnectButton>
       </MainSection>
       <InfoSection>
         <InfoTitle>O que é Blockchain?</InfoTitle>
